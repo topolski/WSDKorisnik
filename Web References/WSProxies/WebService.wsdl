@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wsdiplomski.net/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wsdiplomski.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wsdiplomski.net/">
+      <s:element name="getKategorije">
+        <s:complexType />
+      </s:element>
+      <s:element name="getKategorijeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKategorijeResult" type="tns:ArrayOfKategorija" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKategorija">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Kategorija" nillable="true" type="tns:Kategorija" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Kategorija">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idKategorije" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nazivKategorije" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPosts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nazivKategorije" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPostsResult" type="tns:ArrayOfPost" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPost">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Post" nillable="true" type="tns:Post" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Post">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Naslov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkKaPostu" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getKategorijeJson">
+        <s:complexType />
+      </s:element>
+      <s:element name="getKategorijeJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getKategorijeJsonResult" type="tns:ArrayOfKategorija" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPostsJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nazivKategorije" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPostsJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPostsJsonResult" type="tns:ArrayOfPost" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getKategorijeSoapIn">
+    <wsdl:part name="parameters" element="tns:getKategorije" />
+  </wsdl:message>
+  <wsdl:message name="getKategorijeSoapOut">
+    <wsdl:part name="parameters" element="tns:getKategorijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPostsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPosts" />
+  </wsdl:message>
+  <wsdl:message name="getPostsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getKategorijeJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:getKategorijeJson" />
+  </wsdl:message>
+  <wsdl:message name="getKategorijeJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:getKategorijeJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPostsJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:getPostsJson" />
+  </wsdl:message>
+  <wsdl:message name="getPostsJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:getPostsJsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="getKategorije">
+      <wsdl:input message="tns:getKategorijeSoapIn" />
+      <wsdl:output message="tns:getKategorijeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPosts">
+      <wsdl:input message="tns:getPostsSoapIn" />
+      <wsdl:output message="tns:getPostsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getKategorijeJson">
+      <wsdl:input message="tns:getKategorijeJsonSoapIn" />
+      <wsdl:output message="tns:getKategorijeJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPostsJson">
+      <wsdl:input message="tns:getPostsJsonSoapIn" />
+      <wsdl:output message="tns:getPostsJsonSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getKategorije">
+      <soap:operation soapAction="http://wsdiplomski.net/getKategorije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPosts">
+      <soap:operation soapAction="http://wsdiplomski.net/getPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKategorijeJson">
+      <soap:operation soapAction="http://wsdiplomski.net/getKategorijeJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPostsJson">
+      <soap:operation soapAction="http://wsdiplomski.net/getPostsJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getKategorije">
+      <soap12:operation soapAction="http://wsdiplomski.net/getKategorije" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPosts">
+      <soap12:operation soapAction="http://wsdiplomski.net/getPosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKategorijeJson">
+      <soap12:operation soapAction="http://wsdiplomski.net/getKategorijeJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPostsJson">
+      <soap12:operation soapAction="http://wsdiplomski.net/getPostsJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:52664/WSDiplomski/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:52664/WSDiplomski/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

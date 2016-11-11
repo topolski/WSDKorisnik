@@ -1,0 +1,9 @@
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\bin\Debug\WSKorisnik.exe.config
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\bin\Debug\WSKorisnik.exe
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\bin\Debug\WSKorisnik.pdb
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.Properties.Resources.resources
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.csproj.GenerateResource.Cache
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.exe
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.pdb
+c:\users\milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.ProbaZaWS.resources
+C:\Users\Milanko\documents\visual studio 2010\Projects\WSKorisnik\WSKorisnik\obj\x86\Debug\WSKorisnik.csprojResolveAssemblyReference.cache
